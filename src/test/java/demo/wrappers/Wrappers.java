@@ -1,19 +1,21 @@
 package demo.wrappers;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
 
 public class Wrappers {
     /*
      * Write your selenium wrappers here
      */
+    ChromeDriver driver;
+    public Wrappers(ChromeDriver driver) {
+        this.driver = driver;
+    }
+
+    
+    public void openURL(String url)throws InterruptedException{
+        System.out.println("Open URL:" +url);
+        driver.get(url);
+        Thread.sleep(2000);
+        System.out.println("Success!");
+    }
 }
